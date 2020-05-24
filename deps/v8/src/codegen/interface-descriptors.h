@@ -20,88 +20,89 @@ namespace internal {
   BUILTIN_LIST_FROM_TORQUE(IGNORE_BUILTIN, IGNORE_BUILTIN, V, IGNORE_BUILTIN, \
                            IGNORE_BUILTIN, IGNORE_BUILTIN)
 
-#define INTERFACE_DESCRIPTOR_LIST(V)  \
-  V(Abort)                            \
-  V(Allocate)                         \
-  V(AllocateHeapNumber)               \
-  V(ApiCallback)                      \
-  V(ApiGetter)                        \
-  V(ArgumentsAdaptor)                 \
-  V(ArrayConstructor)                 \
-  V(ArrayNArgumentsConstructor)       \
-  V(ArrayNoArgumentConstructor)       \
-  V(ArraySingleArgumentConstructor)   \
-  V(AsyncFunctionStackParameter)      \
-  V(BigIntToI64)                      \
-  V(BigIntToI32Pair)                  \
-  V(I64ToBigInt)                      \
-  V(I32PairToBigInt)                  \
-  V(BinaryOp)                         \
-  V(CallForwardVarargs)               \
-  V(CallFunctionTemplate)             \
-  V(CallTrampoline)                   \
-  V(CallVarargs)                      \
-  V(CallWithArrayLike)                \
-  V(CallWithSpread)                   \
-  V(CEntry1ArgvOnStack)               \
-  V(CloneObjectWithVector)            \
-  V(Compare)                          \
-  V(ConstructForwardVarargs)          \
-  V(ConstructStub)                    \
-  V(ConstructVarargs)                 \
-  V(ConstructWithArrayLike)           \
-  V(ConstructWithSpread)              \
-  V(ContextOnly)                      \
-  V(CppBuiltinAdaptor)                \
-  V(EphemeronKeyBarrier)              \
-  V(FastNewFunctionContext)           \
-  V(FastNewObject)                    \
-  V(FrameDropperTrampoline)           \
-  V(GetIteratorStackParameter)        \
-  V(GetProperty)                      \
-  V(GrowArrayElements)                \
-  V(InterpreterCEntry1)               \
-  V(InterpreterCEntry2)               \
-  V(InterpreterDispatch)              \
-  V(InterpreterPushArgsThenCall)      \
-  V(InterpreterPushArgsThenConstruct) \
-  V(JSTrampoline)                     \
-  V(Load)                             \
-  V(LoadGlobal)                       \
-  V(LoadGlobalNoFeedback)             \
-  V(LoadNoFeedback)                   \
-  V(LoadGlobalWithVector)             \
-  V(LoadWithVector)                   \
-  V(NewArgumentsElements)             \
-  V(NoContext)                        \
-  V(RecordWrite)                      \
-  V(ResumeGenerator)                  \
-  V(RunMicrotasksEntry)               \
-  V(RunMicrotasks)                    \
-  V(Store)                            \
-  V(StoreGlobal)                      \
-  V(StoreGlobalWithVector)            \
-  V(StoreTransition)                  \
-  V(StoreWithVector)                  \
-  V(StringAt)                         \
-  V(StringAtAsString)                 \
-  V(StringSubstring)                  \
-  V(TypeConversion)                   \
-  V(TypeConversionStackParameter)     \
-  V(Typeof)                           \
-  V(Void)                             \
-  V(WasmAtomicNotify)                 \
-  V(WasmI32AtomicWait32)              \
-  V(WasmI32AtomicWait64)              \
-  V(WasmI64AtomicWait32)              \
-  V(WasmI64AtomicWait64)              \
-  V(WasmMemoryGrow)                   \
-  V(WasmTableInit)                    \
-  V(WasmTableCopy)                    \
-  V(WasmTableGet)                     \
-  V(WasmTableSet)                     \
-  V(WasmThrow)                        \
-  BUILTIN_LIST_TFS(V)                 \
+#define INTERFACE_DESCRIPTOR_LIST(V)     \
+  V(Abort)                               \
+  V(Allocate)                            \
+  V(ApiCallback)                         \
+  V(ApiGetter)                           \
+  V(ArgumentsAdaptor)                    \
+  V(ArrayConstructor)                    \
+  V(ArrayNArgumentsConstructor)          \
+  V(ArrayNoArgumentConstructor)          \
+  V(ArraySingleArgumentConstructor)      \
+  V(AsyncFunctionStackParameter)         \
+  V(BigIntToI32Pair)                     \
+  V(BigIntToI64)                         \
+  V(BinaryOp)                            \
+  V(BinaryOp_WithFeedback)               \
+  V(CallForwardVarargs)                  \
+  V(CallFunctionTemplate)                \
+  V(CallTrampoline)                      \
+  V(CallTrampoline_WithFeedback)         \
+  V(CallVarargs)                         \
+  V(CallWithArrayLike)                   \
+  V(CallWithArrayLike_WithFeedback)      \
+  V(CallWithSpread)                      \
+  V(CallWithSpread_WithFeedback)         \
+  V(CEntry1ArgvOnStack)                  \
+  V(CloneObjectWithVector)               \
+  V(Compare)                             \
+  V(Compare_WithFeedback)                \
+  V(ConstructForwardVarargs)             \
+  V(ConstructStub)                       \
+  V(ConstructVarargs)                    \
+  V(ConstructWithArrayLike)              \
+  V(ConstructWithArrayLike_WithFeedback) \
+  V(Construct_WithFeedback)              \
+  V(ConstructWithSpread)                 \
+  V(ConstructWithSpread_WithFeedback)    \
+  V(ContextOnly)                         \
+  V(CppBuiltinAdaptor)                   \
+  V(EphemeronKeyBarrier)                 \
+  V(FastNewFunctionContext)              \
+  V(FastNewObject)                       \
+  V(FrameDropperTrampoline)              \
+  V(GetIteratorStackParameter)           \
+  V(GetProperty)                         \
+  V(GrowArrayElements)                   \
+  V(I32PairToBigInt)                     \
+  V(I64ToBigInt)                         \
+  V(InterpreterCEntry1)                  \
+  V(InterpreterCEntry2)                  \
+  V(InterpreterDispatch)                 \
+  V(InterpreterPushArgsThenCall)         \
+  V(InterpreterPushArgsThenConstruct)    \
+  V(JSTrampoline)                        \
+  V(Load)                                \
+  V(LoadGlobal)                          \
+  V(LoadGlobalNoFeedback)                \
+  V(LoadGlobalWithVector)                \
+  V(LoadNoFeedback)                      \
+  V(LoadWithVector)                      \
+  V(NewArgumentsElements)                \
+  V(NoContext)                           \
+  V(RecordWrite)                         \
+  V(ResumeGenerator)                     \
+  V(RunMicrotasks)                       \
+  V(RunMicrotasksEntry)                  \
+  V(Store)                               \
+  V(StoreGlobal)                         \
+  V(StoreGlobalWithVector)               \
+  V(StoreTransition)                     \
+  V(StoreWithVector)                     \
+  V(StringAt)                            \
+  V(StringAtAsString)                    \
+  V(StringSubstring)                     \
+  V(TypeConversion)                      \
+  V(TypeConversionStackParameter)        \
+  V(Typeof)                              \
+  V(UnaryOp_WithFeedback)                \
+  V(Void)                                \
+  V(WasmFloat32ToNumber)                 \
+  V(WasmFloat64ToNumber)                 \
+  V(WasmI32AtomicWait32)                 \
+  V(WasmI64AtomicWait32)                 \
+  BUILTIN_LIST_TFS(V)                    \
   TORQUE_BUILTIN_LIST_TFC(V)
 
 class V8_EXPORT_PRIVATE CallInterfaceDescriptorData {
@@ -514,10 +515,12 @@ class V8_EXPORT_PRIVATE VoidDescriptor : public CallInterfaceDescriptor {
 };
 
 // This class is subclassed by Torque-generated call interface descriptors.
-template <int parameter_count>
+template <int parameter_count, bool has_context_parameter>
 class TorqueInterfaceDescriptor : public CallInterfaceDescriptor {
  public:
-  static constexpr int kDescriptorFlags = CallInterfaceDescriptorData::kNoFlags;
+  static constexpr int kDescriptorFlags =
+      has_context_parameter ? CallInterfaceDescriptorData::kNoFlags
+                            : CallInterfaceDescriptorData::kNoContext;
   static constexpr int kParameterCount = parameter_count;
   enum ParameterIndices { kContext = kParameterCount };
   template <int i>
@@ -943,12 +946,37 @@ class CallWithSpreadDescriptor : public CallInterfaceDescriptor {
   DECLARE_DESCRIPTOR(CallWithSpreadDescriptor, CallInterfaceDescriptor)
 };
 
+class CallWithSpread_WithFeedbackDescriptor : public CallInterfaceDescriptor {
+ public:
+  DEFINE_PARAMETERS(kTarget, kArgumentsCount, kSpread, kSlot,
+                    kMaybeFeedbackVector)
+  DEFINE_PARAMETER_TYPES(MachineType::AnyTagged(),  // kTarget
+                         MachineType::Int32(),      // kArgumentsCount
+                         MachineType::AnyTagged(),  // kSpread
+                         MachineType::Int32(),      // kSlot
+                         MachineType::AnyTagged())  // kMaybeFeedbackVector
+  DECLARE_DESCRIPTOR(CallWithSpread_WithFeedbackDescriptor,
+                     CallInterfaceDescriptor)
+};
+
 class CallWithArrayLikeDescriptor : public CallInterfaceDescriptor {
  public:
   DEFINE_PARAMETERS(kTarget, kArgumentsList)
   DEFINE_PARAMETER_TYPES(MachineType::AnyTagged(),  // kTarget
                          MachineType::AnyTagged())  // kArgumentsList
   DECLARE_DESCRIPTOR(CallWithArrayLikeDescriptor, CallInterfaceDescriptor)
+};
+
+class CallWithArrayLike_WithFeedbackDescriptor
+    : public CallInterfaceDescriptor {
+ public:
+  DEFINE_PARAMETERS(kTarget, kArgumentsList, kSlot, kMaybeFeedbackVector)
+  DEFINE_PARAMETER_TYPES(MachineType::AnyTagged(),  // kTarget
+                         MachineType::AnyTagged(),  // kArgumentsList
+                         MachineType::Int32(),      // kSlot
+                         MachineType::AnyTagged())  // kMaybeFeedbackVector
+  DECLARE_DESCRIPTOR(CallWithArrayLike_WithFeedbackDescriptor,
+                     CallInterfaceDescriptor)
 };
 
 class ConstructVarargsDescriptor : public CallInterfaceDescriptor {
@@ -974,6 +1002,19 @@ class ConstructWithSpreadDescriptor : public CallInterfaceDescriptor {
   DECLARE_DESCRIPTOR(ConstructWithSpreadDescriptor, CallInterfaceDescriptor)
 };
 
+class ConstructWithSpread_WithFeedbackDescriptor
+    : public CallInterfaceDescriptor {
+ public:
+  // Note: kSlot comes before kSpread since as an untagged value it must be
+  // passed in a register.
+  DEFINE_JS_PARAMETERS(kSlot, kSpread, kMaybeFeedbackVector)
+  DEFINE_JS_PARAMETER_TYPES(MachineType::Int32(),      // kSlot
+                            MachineType::AnyTagged(),  // kSpread
+                            MachineType::AnyTagged())  // kMaybeFeedbackVector
+  DECLARE_DESCRIPTOR(ConstructWithSpread_WithFeedbackDescriptor,
+                     CallInterfaceDescriptor)
+};
+
 class ConstructWithArrayLikeDescriptor : public CallInterfaceDescriptor {
  public:
   DEFINE_PARAMETERS(kTarget, kNewTarget, kArgumentsList)
@@ -981,6 +1022,20 @@ class ConstructWithArrayLikeDescriptor : public CallInterfaceDescriptor {
                          MachineType::AnyTagged(),  // kNewTarget
                          MachineType::AnyTagged())  // kArgumentsList
   DECLARE_DESCRIPTOR(ConstructWithArrayLikeDescriptor, CallInterfaceDescriptor)
+};
+
+class ConstructWithArrayLike_WithFeedbackDescriptor
+    : public CallInterfaceDescriptor {
+ public:
+  DEFINE_PARAMETERS(kTarget, kNewTarget, kArgumentsList, kSlot,
+                    kMaybeFeedbackVector)
+  DEFINE_PARAMETER_TYPES(MachineType::AnyTagged(),  // kTarget
+                         MachineType::AnyTagged(),  // kNewTarget
+                         MachineType::AnyTagged(),  // kArgumentsList
+                         MachineType::Int32(),      // kSlot
+                         MachineType::AnyTagged())  // kMaybeFeedbackVector
+  DECLARE_DESCRIPTOR(ConstructWithArrayLike_WithFeedbackDescriptor,
+                     CallInterfaceDescriptor)
 };
 
 // TODO(ishell): consider merging this with ArrayConstructorDescriptor
@@ -999,13 +1054,6 @@ class AbortDescriptor : public CallInterfaceDescriptor {
   DEFINE_PARAMETERS_NO_CONTEXT(kMessageOrMessageId)
   DEFINE_PARAMETER_TYPES(MachineType::AnyTagged())
   DECLARE_DESCRIPTOR(AbortDescriptor, CallInterfaceDescriptor)
-};
-
-class AllocateHeapNumberDescriptor : public CallInterfaceDescriptor {
- public:
-  DEFINE_PARAMETERS_NO_CONTEXT()
-  DEFINE_PARAMETER_TYPES()
-  DECLARE_DESCRIPTOR(AllocateHeapNumberDescriptor, CallInterfaceDescriptor)
 };
 
 class ArrayConstructorDescriptor : public CallInterfaceDescriptor {
@@ -1310,84 +1358,20 @@ class RunMicrotasksDescriptor final : public CallInterfaceDescriptor {
   static Register MicrotaskQueueRegister();
 };
 
-class WasmMemoryGrowDescriptor final : public CallInterfaceDescriptor {
+class WasmFloat32ToNumberDescriptor final : public CallInterfaceDescriptor {
  public:
-  DEFINE_PARAMETERS_NO_CONTEXT(kNumPages)
-  DEFINE_RESULT_AND_PARAMETER_TYPES(MachineType::Int32(),  // result 1
-                                    MachineType::Int32())  // kNumPages
-  DECLARE_DESCRIPTOR(WasmMemoryGrowDescriptor, CallInterfaceDescriptor)
+  DEFINE_PARAMETERS_NO_CONTEXT(kValue)
+  DEFINE_RESULT_AND_PARAMETER_TYPES(MachineType::AnyTagged(),  // result
+                                    MachineType::Float32())    // value
+  DECLARE_DESCRIPTOR(WasmFloat32ToNumberDescriptor, CallInterfaceDescriptor)
 };
 
-class WasmTableInitDescriptor final : public CallInterfaceDescriptor {
+class WasmFloat64ToNumberDescriptor final : public CallInterfaceDescriptor {
  public:
-  DEFINE_PARAMETERS_NO_CONTEXT(kDestination, kSource, kSize, kTableIndex,
-                               kSegmentIndex)
-  DEFINE_PARAMETER_TYPES(MachineType::Int32(),      // kDestination
-                         MachineType::Int32(),      // kSource
-                         MachineType::Int32(),      // kSize
-                         MachineType::AnyTagged(),  // kTableIndex
-                         MachineType::AnyTagged(),  // kSegmentindex
-  )
-
-#if V8_TARGET_ARCH_IA32
-  static constexpr bool kPassLastArgOnStack = true;
-#else
-  static constexpr bool kPassLastArgOnStack = false;
-#endif
-
-  // Pass the last parameter through the stack.
-  static constexpr int kStackArgumentsCount = kPassLastArgOnStack ? 1 : 0;
-
-  DECLARE_DESCRIPTOR(WasmTableInitDescriptor, CallInterfaceDescriptor)
-};
-
-class WasmTableCopyDescriptor final : public CallInterfaceDescriptor {
- public:
-  DEFINE_PARAMETERS_NO_CONTEXT(kDestination, kSource, kSize, kDestinationTable,
-                               kSourceTable)
-  DEFINE_PARAMETER_TYPES(MachineType::Int32(),      // kDestination
-                         MachineType::Int32(),      // kSource
-                         MachineType::Int32(),      // kSize
-                         MachineType::AnyTagged(),  // kDestinationTable
-                         MachineType::AnyTagged(),  // kSourceTable
-  )
-
-#if V8_TARGET_ARCH_IA32
-  static constexpr bool kPassLastArgOnStack = true;
-#else
-  static constexpr bool kPassLastArgOnStack = false;
-#endif
-
-  // Pass the last parameter through the stack.
-  static constexpr int kStackArgumentsCount = kPassLastArgOnStack ? 1 : 0;
-
-  DECLARE_DESCRIPTOR(WasmTableCopyDescriptor, CallInterfaceDescriptor)
-};
-
-class WasmTableGetDescriptor final : public CallInterfaceDescriptor {
- public:
-  DEFINE_PARAMETERS_NO_CONTEXT(kTableIndex, kEntryIndex)
-  DEFINE_RESULT_AND_PARAMETER_TYPES(MachineType::AnyTagged(),     // result 1
-                                    MachineType::TaggedSigned(),  // kTableIndex
-                                    MachineType::Int32())         // kEntryIndex
-  DECLARE_DESCRIPTOR(WasmTableGetDescriptor, CallInterfaceDescriptor)
-};
-
-class WasmTableSetDescriptor final : public CallInterfaceDescriptor {
- public:
-  DEFINE_PARAMETERS_NO_CONTEXT(kTableIndex, kEntryIndex, kValue)
-  DEFINE_PARAMETER_TYPES(MachineType::TaggedSigned(),  // kTableIndex
-                         MachineType::Int32(),         // kEntryIndex
-                         MachineType::AnyTagged())     // kValue
-  DECLARE_DESCRIPTOR(WasmTableSetDescriptor, CallInterfaceDescriptor)
-};
-
-class WasmThrowDescriptor final : public CallInterfaceDescriptor {
- public:
-  DEFINE_PARAMETERS_NO_CONTEXT(kException)
-  DEFINE_RESULT_AND_PARAMETER_TYPES(MachineType::AnyTagged(),  // result 1
-                                    MachineType::AnyTagged())  // kException
-  DECLARE_DESCRIPTOR(WasmThrowDescriptor, CallInterfaceDescriptor)
+  DEFINE_PARAMETERS_NO_CONTEXT(kValue)
+  DEFINE_RESULT_AND_PARAMETER_TYPES(MachineType::AnyTagged(),  // result
+                                    MachineType::Float64())    // value
+  DECLARE_DESCRIPTOR(WasmFloat64ToNumberDescriptor, CallInterfaceDescriptor)
 };
 
 class V8_EXPORT_PRIVATE I64ToBigIntDescriptor final
@@ -1425,15 +1409,6 @@ class V8_EXPORT_PRIVATE BigIntToI32PairDescriptor final
                                     MachineType::Uint32(),     // result 2
                                     MachineType::AnyTagged())  // kArgument
   DECLARE_DESCRIPTOR(BigIntToI32PairDescriptor, CallInterfaceDescriptor)
-};
-
-class WasmAtomicNotifyDescriptor final : public CallInterfaceDescriptor {
- public:
-  DEFINE_PARAMETERS_NO_CONTEXT(kAddress, kCount)
-  DEFINE_RESULT_AND_PARAMETER_TYPES(MachineType::Uint32(),  // result 1
-                                    MachineType::Uint32(),  // kAddress
-                                    MachineType::Uint32())  // kCount
-  DECLARE_DESCRIPTOR(WasmAtomicNotifyDescriptor, CallInterfaceDescriptor)
 };
 
 class WasmI32AtomicWait32Descriptor final : public CallInterfaceDescriptor {
@@ -1474,26 +1449,6 @@ class WasmI64AtomicWait32Descriptor final : public CallInterfaceDescriptor {
   DECLARE_DESCRIPTOR(WasmI64AtomicWait32Descriptor, CallInterfaceDescriptor)
 };
 
-class WasmI32AtomicWait64Descriptor final : public CallInterfaceDescriptor {
- public:
-  DEFINE_PARAMETERS_NO_CONTEXT(kAddress, kExpectedValue, kTimeout)
-  DEFINE_RESULT_AND_PARAMETER_TYPES(MachineType::Uint32(),  // result 1
-                                    MachineType::Uint32(),  // kAddress
-                                    MachineType::Int32(),   // kExpectedValue
-                                    MachineType::Uint64())  // kTimeout
-  DECLARE_DESCRIPTOR(WasmI32AtomicWait64Descriptor, CallInterfaceDescriptor)
-};
-
-class WasmI64AtomicWait64Descriptor final : public CallInterfaceDescriptor {
- public:
-  DEFINE_PARAMETERS_NO_CONTEXT(kAddress, kExpectedValue, kTimeout)
-  DEFINE_RESULT_AND_PARAMETER_TYPES(MachineType::Uint32(),  // result 1
-                                    MachineType::Uint32(),  // kAddress
-                                    MachineType::Uint64(),  // kExpectedValue
-                                    MachineType::Uint64())  // kTimeout
-  DECLARE_DESCRIPTOR(WasmI64AtomicWait64Descriptor, CallInterfaceDescriptor)
-};
-
 class CloneObjectWithVectorDescriptor final : public CallInterfaceDescriptor {
  public:
   DEFINE_PARAMETERS(kSource, kFlags, kSlot, kVector)
@@ -1503,6 +1458,57 @@ class CloneObjectWithVectorDescriptor final : public CallInterfaceDescriptor {
                                     MachineType::TaggedSigned(),   // kSlot
                                     MachineType::AnyTagged())      // kVector
   DECLARE_DESCRIPTOR(CloneObjectWithVectorDescriptor, CallInterfaceDescriptor)
+};
+
+class BinaryOp_WithFeedbackDescriptor : public CallInterfaceDescriptor {
+ public:
+  DEFINE_PARAMETERS(kLeft, kRight, kSlot, kMaybeFeedbackVector)
+  DEFINE_PARAMETER_TYPES(MachineType::AnyTagged(),  // kLeft
+                         MachineType::AnyTagged(),  // kRight
+                         MachineType::Int32(),      // kSlot
+                         MachineType::AnyTagged())  // kMaybeFeedbackVector
+  DECLARE_DESCRIPTOR(BinaryOp_WithFeedbackDescriptor, CallInterfaceDescriptor)
+};
+
+class CallTrampoline_WithFeedbackDescriptor : public CallInterfaceDescriptor {
+ public:
+  DEFINE_PARAMETERS_VARARGS(kFunction, kActualArgumentsCount, kSlot,
+                            kMaybeFeedbackVector)
+  DEFINE_PARAMETER_TYPES(MachineType::AnyTagged(),  // kFunction
+                         MachineType::Int32(),      // kActualArgumentsCount
+                         MachineType::Int32(),      // kSlot
+                         MachineType::AnyTagged())  // kMaybeFeedbackVector
+  DECLARE_DESCRIPTOR(CallTrampoline_WithFeedbackDescriptor,
+                     CallInterfaceDescriptor)
+};
+
+class Compare_WithFeedbackDescriptor : public CallInterfaceDescriptor {
+ public:
+  DEFINE_PARAMETERS(kLeft, kRight, kSlot, kMaybeFeedbackVector)
+  DEFINE_PARAMETER_TYPES(MachineType::AnyTagged(),  // kLeft
+                         MachineType::AnyTagged(),  // kRight
+                         MachineType::Int32(),      // kSlot
+                         MachineType::AnyTagged())  // kMaybeFeedbackVector
+  DECLARE_DESCRIPTOR(Compare_WithFeedbackDescriptor, CallInterfaceDescriptor)
+};
+
+class Construct_WithFeedbackDescriptor : public CallInterfaceDescriptor {
+ public:
+  // kSlot is passed in a register, kMaybeFeedbackVector on the stack.
+  DEFINE_JS_PARAMETERS(kSlot, kMaybeFeedbackVector)
+  DEFINE_JS_PARAMETER_TYPES(MachineType::Int32(),      // kSlot
+                            MachineType::AnyTagged())  // kMaybeFeedbackVector
+  DECLARE_JS_COMPATIBLE_DESCRIPTOR(Construct_WithFeedbackDescriptor,
+                                   CallInterfaceDescriptor, 1)
+};
+
+class UnaryOp_WithFeedbackDescriptor : public CallInterfaceDescriptor {
+ public:
+  DEFINE_PARAMETERS(kValue, kSlot, kMaybeFeedbackVector)
+  DEFINE_PARAMETER_TYPES(MachineType::AnyTagged(),  // kValue
+                         MachineType::Int32(),      // kSlot
+                         MachineType::AnyTagged())  // kMaybeFeedbackVector
+  DECLARE_DESCRIPTOR(UnaryOp_WithFeedbackDescriptor, CallInterfaceDescriptor)
 };
 
 #define DEFINE_TFS_BUILTIN_DESCRIPTOR(Name, ...)                          \
